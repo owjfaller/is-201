@@ -6,49 +6,109 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/scratch.css">
 </head>
+  <header>
+    <nav class="top-nav">
+      <a href="index.html" target="_blank">Home</a>
+      <a href="post.html" target="_blank">Game</a>
+    </nav>
+  </header>
+
+
 <body>
-    <p>This page is about sports
-    </p>These are the links to the other pages. i still need to style and move them.
-    <br>
-    <br>
-<div class="links"><a href="index.html">Home Page</a></div>
-   
-    <div class="links"><a href="post.html">Snake Game</a></div>
-    <ul>
-          <li>Dude Perfect does sports trick shots</li>
+  <div class="NBA">
+   <h1>This Page is about the NBA</h1>
+    <h2>The NBA is a professional basketball league in the United States</h2>
+  </div>
+  <br><br><br>
+
+  <div class="list">
+
+ 
+  <h2>I really like to watch and play basketball.</h2>
+    <ul> <h3>These are my favorite NBA players</h3>
+          <li>Russell Westbrook</li>
+          <li>Lebron James</li>
+          <li>Nikola Jokic</li>
          
-          <li>I like to play basketball and football</li>
-          <li>I also think soccer is cool</li>
-          <li>These are the greatest basketball players
+        
+          <br><br><br>
+          <h3>This is a list of the greatest NBA players of all time.</h3>
             <ol>
-                <li>michael jordan</li>
-                <li>lebron james</li>
-                <li>kareem abdul-jabbar</li>
+                <li>Michael Jordan</li>
+                <li>LeBron James</li>
+                <li>Kareem Abdul-Jabbar</li>
             </ol>
-         
-
-
-       
     </ul>
+    <h3>Here are the images of my favorite players.</h3>
+    <div class="image-row">
+      <img src="images/russ.jpg" alt="Russell Westbrook">
+      <img src="images/jokic.jpg" alt="Nikola Jokic">
+      <img src="images/lebron.jpg" alt="LeBron James">
+    </div>
 </body>
 </html>
 <ul></ul>
+</div>
 <br>
 <br>
-<h1>Dude Perfect Video</h1>
+<div class="nba2">
+ <h1> NBA Top 100 Plays</h1>
     <div style="text-align: center;">
-        <!-- Embedded Dude Perfect Video from YouTube -->
-        <iframe width="560" height="315" src="https://www.youtube.com/watch?v=iKB8StO052g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/watch?v=j2kvgwLapKk" frameborder="0"></iframe>
     </div>
 <br>
 <br>
 <br>
 
-<h1>Interactive Tableau Graph</h1>
-    
-<!-- Embed Tableau Visualization -->
-<div style="width: 100%; height: 800px;">
-    <iframe src="https://public.tableau.com/shared/5JN5KMXXM?:display_count=n&:origin=viz_share_link"
-            width="100%" height="800px" frameborder="0">
-    </iframe>
+<h1>NBA Player Shot Charts</h1>
 </div>
+
+<div class='tableauPlaceholder' id='viz1745447261766' style='position: relative; text-align: center;'>
+  <noscript>
+    <a href='#'>
+      <img alt='NBA Shots' 
+           src='https://public.tableau.com/static/images/NB/NBAShots_15945788351370/NBAShots/1_rss.png' 
+           style='border: none' />
+    </a>
+  </noscript>
+  <object class='tableauViz' style='display:none;'>
+    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+    <param name='embed_code_version' value='3' />
+    <param name='site_root' value='' />
+    <param name='name' value='NBAShots_15945788351370/NBAShots' />
+    <param name='tabs' value='no' />
+    <param name='toolbar' value='yes' />
+    <param name='static_image' 
+           value='https://public.tableau.com/static/images/NB/NBAShots_15945788351370/NBAShots/1.png' />
+    <param name='animate_transition' value='yes' />
+    <param name='display_static_image' value='yes' />
+    <param name='display_spinner' value='yes' />
+    <param name='display_overlay' value='yes' />
+    <param name='display_count' value='yes' />
+    <param name='language' value='en-US' />
+  </object>
+</div>
+
+<script type='text/javascript'>
+  var divElement = document.getElementById('viz1745447261766');
+  var vizElement = divElement.getElementsByTagName('object')[0];
+  if (divElement.offsetWidth > 800) {
+    vizElement.style.width = '1300px';
+    vizElement.style.height = '827px';
+  } else if (divElement.offsetWidth > 500) {
+    vizElement.style.width = '1300px';
+    vizElement.style.height = '827px';
+  } else {
+    vizElement.style.width = '100%';
+    vizElement.style.height = '600px';
+  }
+
+  var scriptElement = document.createElement('script');
+  scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+  vizElement.parentNode.insertBefore(scriptElement, vizElement);
+</script>
+
+<br><br><br><br><br><br><br>
+<br><br><br><br>
+
+<a href="about.html">Back to Top</a>

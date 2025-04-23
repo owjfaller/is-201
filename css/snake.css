@@ -1,0 +1,36 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #222; /* Dark background for the game */
+    color: white; /* Text color for the page */
+    flex-direction: column;
+}
+
+/* Styling the canvas */
+canvas {
+    border: 2px solid white;
+}
+
+/* Homepage link style */
+.homepage a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.homepage a:hover {
+    text-decoration: underline;
+}
+
+/* Game title styling */
+h1 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+

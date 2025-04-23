@@ -7,27 +7,62 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #222;
+            color: white;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #222;
-            color: white;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 10px 0;
         }
 
         canvas {
             border: 2px solid white;
         }
 
-        h1 {
-            text-align: center;
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 32px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        .homepage {
+            margin-bottom: 20px;
+        }
+
+        #playAgainButton {
+            display: none;
         }
     </style>
 </head>
 <body>
-   <h1 class="homepage"><a href="index.html">Home Page</a></h1>
-    <h1>Snake Game</h1>
+
+    <!-- Home Page Button -->
+    <h1 class="homepage"><a href="index.html" class="button">Home Page</a></h1>
+
+    <!-- Title for the Game -->
+    <h1>Owen's Snake Game</h1>
+
+    <!-- Play Again Button (hidden initially) -->
+    <button id="playAgainButton" class="button" onclick="restartGame()">Play Again</button>
+
     <canvas id="gameCanvas" width="400" height="400"></canvas>
 
     <script>
@@ -36,6 +71,7 @@
 
         const box = 20;
         let score = 0;
+        let gameInterval;
 
         const snake = [
             { x: 9 * box, y: 10 * box }
@@ -54,8 +90,8 @@
         }
 
         function generateFood() {
-            const x = Math.floor(Math.random() * 20) * box;
-            const y = Math.floor(Math.random() * 20) * box;
+            const x = Math.floor(Math.random() * 18 + 1) * box;
+            const y = Math.floor(Math.random() * 18 + 1) * box;
             return { x, y };
         }
 
@@ -63,17 +99,22 @@
             ctx.fillStyle = "black";
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+            // Draw the entire snake in blue
             for (let i = 0; i < snake.length; i++) {
-                ctx.fillStyle = i === 0 ? "green" : "white";
+                ctx.fillStyle = "blue";  // The entire snake is blue now
                 ctx.fillRect(snake[i].x, snake[i].y, box, box);
             }
 
+            // Draw food as a red apple (circle)
             ctx.fillStyle = "red";
-            ctx.fillRect(food.x, food.y, box, box);
+            ctx.beginPath();
+            ctx.arc(food.x + box / 2, food.y + box / 2, box / 2, 0, Math.PI * 2);
+            ctx.fill();
 
             let snakeX = snake[0].x;
             let snakeY = snake[0].y;
 
+            // Direction handling
             if (direction === "LEFT") snakeX -= box;
             if (direction === "UP") snakeY -= box;
             if (direction === "RIGHT") snakeX += box;
@@ -88,13 +129,16 @@
 
             const newHead = { x: snakeX, y: snakeY };
 
+            // Check if the snake collides with itself or goes out of bounds
             if (snakeX < 0 || snakeX >= canvas.width || snakeY < 0 || snakeY >= canvas.height || collision(newHead, snake)) {
-                clearInterval(game);
+                clearInterval(gameInterval);
+                document.getElementById("playAgainButton").style.display = "block"; // Show the "Play Again" button
                 alert("Game Over! Score: " + score);
             }
 
             snake.unshift(newHead);
 
+            // Display the score
             ctx.fillStyle = "white";
             ctx.font = "20px Arial";
             ctx.fillText("Score: " + score, box, box);
@@ -107,7 +151,19 @@
             return false;
         }
 
-        const game = setInterval(drawGame, 100);
+        function restartGame() {
+            // Reset the game state
+            score = 0;
+            snake.length = 1;
+            snake[0] = { x: 9 * box, y: 10 * box };
+            food = generateFood();
+            direction = undefined;
+            document.getElementById("playAgainButton").style.display = "none"; // Hide the "Play Again" button
+            gameInterval = setInterval(drawGame, 100);
+        }
+
+        // Start the game
+        gameInterval = setInterval(drawGame, 100);
     </script>
 </body>
 </html>

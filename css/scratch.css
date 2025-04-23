@@ -1,16 +1,15 @@
-h1{
-    color: aqua;
-}
+
 ol{
-    color: purple;
+    color: darkgray;
 }
 
 ul{
-    color: green;
+    color: gray;
 }
 body{
    border: 5px;
    border-color: black;
+   background-color: bisque;
 }
 
 .links{
@@ -18,3 +17,74 @@ body{
     font-family: 'Courier New', Courier, monospace;
     color: blue;
 }
+
+/* Basic reset */
+body, html {
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .top-nav {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .top-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .top-nav a:hover {
+    text-decoration: underline;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  
+  /* Container for the image row */
+  .image-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* spacing between images */
+    padding: 20px;
+  }
+  
+  /* Styling the images */
+  .image-row img {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .image-row img:hover {
+    transform: scale(1.05);
+  }
+  .NBA {
+    position: absolute;      /* Position relative to the nearest positioned ancestor */
+    left: 50%;               /* 50% from the left of the container */
+    transform: translate(-50%, -50%); /* Move the element back by 50% of its width and height */
+    text-align: center;      /* Center any inline content inside */
+  }
+
+  .list{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  .nba2 {
+    color: brown;
+  }
