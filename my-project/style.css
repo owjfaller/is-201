@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    min-height: 100vh;
+    color: #fff;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    background: linear-gradient(90deg, #00d9ff, #ff00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Loading */
+.loading {
+    text-align: center;
+    padding: 60px;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    border-top-color: #00d9ff;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Upload Section */
+.upload-section {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.upload-box {
+    width: 300px;
+    height: 300px;
+    border: 3px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.upload-box:hover {
+    border-color: #00d9ff;
+    background: rgba(0, 217, 255, 0.1);
+}
+
+.upload-box.has-image {
+    border-style: solid;
+    border-color: #00d9ff;
+}
+
+.upload-content {
+    text-align: center;
+}
+
+.upload-icon {
+    font-size: 48px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 10px;
+}
+
+.upload-content p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 17px;
+}
+
+/* Controls */
+.controls {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+.controls label {
+    display: block;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+}
+
+.slider-container span {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    min-width: 50px;
+}
+
+.slider-container span:first-child {
+    text-align: right;
+}
+
+input[type="range"] {
+    width: 300px;
+    height: 8px;
+    -webkit-appearance: none;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    background: linear-gradient(135deg, #00d9ff, #ff00ff);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+.blend-value {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00d9ff;
+}
+
+/* Result Section */
+.result-section {
+    text-align: center;
+}
+
+.result-section h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+#resultCanvas {
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.download-btn {
+    margin-top: 20px;
+    padding: 12px 30px;
+    font-size: 1rem;
+    background: linear-gradient(135deg, #00d9ff, #ff00ff);
+    border: none;
+    border-radius: 30px;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 217, 255, 0.4);
+}
+
+/* Error */
+.error {
+    background: rgba(255, 0, 0, 0.2);
+    border: 1px solid rgba(255, 0, 0, 0.5);
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 680px) {
+    .upload-box {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    input[type="range"] {
+        width: 200px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}

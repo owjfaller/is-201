@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Merge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Face Merge</h1>
+
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>Loading face detection models...</p>
+        </div>
+
+        <div id="app" class="hidden">
+            <div class="upload-section">
+                <div class="upload-box" id="upload1">
+                    <input type="file" id="file1" accept="image/*" hidden>
+                    <div class="upload-content">
+                        <div class="upload-icon">+</div>
+                        <p>Upload Face 1</p>
+                    </div>
+                    <img id="preview1" class="preview hidden" alt="Face 1">
+                    <canvas id="canvas1" class="hidden"></canvas>
+                </div>
+
+                <div class="upload-box" id="upload2">
+                    <input type="file" id="file2" accept="image/*" hidden>
+                    <div class="upload-content">
+                        <div class="upload-icon">+</div>
+                        <p>Upload Face 2</p>
+                    </div>
+                    <img id="preview2" class="preview hidden" alt="Face 2">
+                    <canvas id="canvas2" class="hidden"></canvas>
+                </div>
+            </div>
+
+            <div id="controls" class="controls hidden">
+                <label for="blendSlider">Blend Ratio</label>
+                <div class="slider-container">
+                    <span>Face 1</span>
+                    <input type="range" id="blendSlider" min="0" max="100" value="50">
+                    <span>Face 2</span>
+                </div>
+                <div class="blend-value"><span id="blendValue">50</span>%</div>
+            </div>
+
+            <div id="result-section" class="result-section hidden">
+                <h2>Result</h2>
+                <canvas id="resultCanvas"></canvas>
+                <button id="downloadBtn" class="download-btn">Download Result</button>
+            </div>
+
+            <div id="error" class="error hidden"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+    <script src="face-morph.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
